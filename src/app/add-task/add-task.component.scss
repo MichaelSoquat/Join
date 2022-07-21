@@ -130,3 +130,8 @@ textarea {
     display: flex;
     justify-content: space-between;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url('../../assets/icons/icons8-calendar-150.png');
+    width: 20px;
+}
