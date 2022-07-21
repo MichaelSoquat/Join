@@ -6,7 +6,6 @@
     <div class="add-task-container bg2">
         <form #f="ngForm" (submit)="addNewTaskToBoard(f)">
             <div class="row first-row">
-
                 <div class="label-input-container">
                     <label class="color1" for="title">TITLE</label>
                     <input class="height-width-inputs" required ngModel name="title" type="text">
@@ -15,18 +14,11 @@
                     <label class="color1" for="dueDate">DUE DATE</label>
                     <input class="height-width-inputs" required ngModel name="dueDate" type="date">
                 </div>
-
-
-
             </div>
-
-
-
             <div class="row second-row">
                 <div class="label-input-container">
                     <label class="color1" for="category">CATEGORY</label>
-
-                    <select class="height-width-inputs" required ngModel name="category" type="text">
+                    <select title="Category" class="height-width-inputs" required ngModel name="category" type="text">
                         <option value="Management">Management</option>
                         <option value="Marketing">Marketing</option>
                         <option value="IT">IT</option>
@@ -39,33 +31,30 @@
                 </div>
                 <div class="label-input-container">
                     <label class="color1" for="urgency">URGENCY</label>
-                    <select class="height-width-inputs" required ngModel name="urgency" type="text">
+                    <select title="Urgency" class="height-width-inputs" required ngModel name="urgency" type="text">
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
                         <option value="Low">Low</option>
                     </select>
                 </div>
             </div>
-
-
             <div class="row third-row">
                 <div class="label-input-container">
                     <label class="color1" for="description">DESCRIPTION</label>
-                    <textarea class="textarea height-width-inputs" name="description" ngModel cols="30" rows="7"></textarea>
+                    <textarea class="textarea height-width-inputs" style="height: auto !important;" name="description" ngModel cols="30" rows="7"></textarea>
                 </div>
 
-                <div>
-                    <div class="label-input-container">
+                <div class="label-input-container order-containers-buttons-assignement">
+                    <div class="assigned-container">
                         <label class="color1" for="assignedTo">ASSIGNED TO</label>
                         <img class="assigned-to-img" src="../../assets/img/Soquat.png" alt="">
                     </div>
-
-                    <button class="cancel-btn" type="cancel">Cancel</button>
-                    <button class="create-task-btn" [disabled]="f.invalid" type="submit">Create Task</button>
+                    <div class="button-container">
+                        <button class="cancel-btn" type="cancel">Cancel</button>
+                        <button [ngClass]="f.valid? 'create-task-btn': 'create-task-btn-disabled'" type="submit">Create Task</button>
+                    </div>
                 </div>
             </div>
-
         </form>
     </div>
-
 </section>

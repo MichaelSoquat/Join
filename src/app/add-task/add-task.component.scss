@@ -61,6 +61,16 @@
     border: 2px solid rgb(30, 49, 144);
 }
 
+.create-task-btn-disabled {
+    background-color: rgb(244, 243, 251);
+    color: grey;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid rgb(30, 49, 144);
+}
+
 .create-task-btn:hover {
     cursor: pointer;
     background-color: rgb(46, 68, 179);
@@ -85,12 +95,38 @@
 
 .height-width-inputs {
     height: 50px;
-    min-width: 330px;
+    width: 350px;
     background-color: white;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 5px;
     font-size: 1.2rem;
+    padding: 2px !important;
     &:focus {
         outline: none;
     }
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+}
+
+.button-container {
+    width: 350px;
+}
+
+.order-containers-buttons-assignement {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.assigned-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
 }
