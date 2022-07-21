@@ -23,18 +23,74 @@
 
 .row {
     display: flex;
+    justify-content: space-between;
 }
 
 .label-input-container {
     display: flex;
     flex-direction: column;
     margin: 16px;
-    input {
-        height: 50px;
-        background-color: white;
-        border: 1px solid rgb(192, 192, 192);
-        border-radius: 5px;
-        font-size: 1.2rem;
-        padding-left: 1rem;
+    label {
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+}
+
+.cancel-btn {
+    border: 2px solid rgb(244, 243, 251);
+    background-color: rgb(244, 243, 251);
+    color: rgb(30, 49, 144);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+    border: 2px solid rgb(30, 49, 144);
+}
+
+.create-task-btn {
+    background-color: rgb(30, 49, 144);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid rgb(30, 49, 144);
+}
+
+.create-task-btn:hover {
+    cursor: pointer;
+    background-color: rgb(46, 68, 179);
+}
+
+.assigned-to-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: cover;
+}
+
+.textarea {
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    padding: 1rem;
+    resize: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.height-width-inputs {
+    height: 50px;
+    min-width: 330px;
+    background-color: white;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 5px;
+    font-size: 1.2rem;
+    &:focus {
+        outline: none;
     }
 }

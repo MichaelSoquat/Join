@@ -9,11 +9,11 @@
 
                 <div class="label-input-container">
                     <label class="color1" for="title">TITLE</label>
-                    <input required ngModel name="title" type="text">
+                    <input class="height-width-inputs" required ngModel name="title" type="text">
                 </div>
                 <div class="label-input-container">
                     <label class="color1" for="dueDate">DUE DATE</label>
-                    <input required ngModel name="dueDate" type="text">
+                    <input class="height-width-inputs" required ngModel name="dueDate" type="date">
                 </div>
 
 
@@ -25,11 +25,25 @@
             <div class="row second-row">
                 <div class="label-input-container">
                     <label class="color1" for="category">CATEGORY</label>
-                    <input required ngModel name="category" type="text">
+
+                    <select class="height-width-inputs" required ngModel name="category" type="text">
+                        <option value="Management">Management</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="IT">IT</option>
+                        <option value="Production">Production</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Logistics">Logistics</option>
+                        <option value="Sales">Sales</option>
+                    </select>
+
                 </div>
                 <div class="label-input-container">
                     <label class="color1" for="urgency">URGENCY</label>
-                    <input required ngModel name="urgency" type="text">
+                    <select class="height-width-inputs" required ngModel name="urgency" type="text">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
                 </div>
             </div>
 
@@ -37,17 +51,17 @@
             <div class="row third-row">
                 <div class="label-input-container">
                     <label class="color1" for="description">DESCRIPTION</label>
-                    <input required ngModel name="description" type="text">
+                    <textarea class="textarea height-width-inputs" name="description" ngModel cols="30" rows="7"></textarea>
                 </div>
 
                 <div>
                     <div class="label-input-container">
                         <label class="color1" for="assignedTo">ASSIGNED TO</label>
-                        <input required ngModel name="assignedTo" type="text">
+                        <img class="assigned-to-img" src="../../assets/img/Soquat.png" alt="">
                     </div>
 
-                    <button type="cancel">Cancel</button>
-                    <button [disabled]="f.invalid" type="submit">Create Task</button>
+                    <button class="cancel-btn" type="cancel">Cancel</button>
+                    <button class="create-task-btn" [disabled]="f.invalid" type="submit">Create Task</button>
                 </div>
             </div>
 
