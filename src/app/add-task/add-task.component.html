@@ -1,0 +1,30 @@
+<section class="add-task-site">
+    <div class="add-task-header">
+        <h1>Add Task</h1>
+        <span>Learning Management System Project</span>
+    </div>
+    <div class="add-task-container">
+        <form #f="ngForm" (submit)="addNewTaskToBoard(f)">
+            <div class="first-row"></div>
+            <label for="title">TITLE</label>
+            <input name="title" type="text">
+            <label for="dueDate">DUE DATE</label>
+            <input name="dueDate" type="text">
+            <div class="second-row"></div>
+            <label for="category">CATEGORY</label>
+            <input name="category" type="text">
+            <label for="urgency">URGENCY</label>
+            <input name="urgency" type="text">
+            <div class="third-row"></div>
+            <label for="description">DESCRIPTION</label>
+            <input name="description" type="text">
+            <div>
+                <label for="assignedTo">ASSIGNED TO</label>
+                <input name="assignedTo" type="text">
+                <button type="cancel">Cancel</button>
+                <button type="submit">Create Task</button>
+            </div>
+        </form>
+    </div>
+
+</section>
