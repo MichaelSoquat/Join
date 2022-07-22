@@ -1,0 +1,30 @@
+:host {
+    width: 100%;
+    padding: 32px;
+}
+
+.backlog-container {
+    flex-direction: column;
+}
+
+.backlog-container>p {
+    margin-top: 4px;
+}
+
+.headlines {
+    display: flex;
+}
+
+.headlines {
+    display: flex;
+}
+
+.stand-alone {
+    min-width: 400px;
+}
+
+.space-category-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -1,1 +1,31 @@
-<p>board works!</p>
+<div class="board-container">
+    <div class="column">
+        <h1>TO DO</h1>
+        <div class="render-content bg2">
+            <div class="one-task-container" *ngFor="let task of taskservice.allTasks">
+                <h3>{{task.title}}</h3>
+                <div>{{task.description}}</div>
+
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <h1>IN PROGRESS</h1>
+        <div class="render-content bg2">
+
+        </div>
+    </div>
+    <div class="column">
+        <h1>TESTING</h1>
+        <div class="render-content bg2">
+
+        </div>
+    </div>
+    <div class="column">
+        <h1>DONE</h1>
+        <div class="render-content bg2">
+
+        </div>
+    </div>
+
+</div>

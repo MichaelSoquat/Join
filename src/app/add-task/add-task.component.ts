@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Task } from '../modules/task';
+import { TaskServiceService } from '../services/task-service.service';
 
 @Component({
   selector: 'app-add-task',
@@ -8,13 +10,12 @@ import { NgForm } from '@angular/forms';
 })
 export class AddTaskComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(public taskservice: TaskServiceService) { }
 
   ngOnInit(): void {
   }
 
-  addNewTaskToBoard(f: NgForm) {
-    
-  }
+  
 
 }

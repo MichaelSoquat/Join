@@ -4,7 +4,7 @@
         <span class="color1">Learning Management System Project</span>
     </div>
     <div class="add-task-container bg2">
-        <form #f="ngForm" (submit)="addNewTaskToBoard(f)">
+        <form #f="ngForm" (submit)="taskservice.addTaskToBacklog(f)">
             <div class="row first-row">
                 <div class="label-input-container">
                     <label class="color1" for="title">TITLE</label>
@@ -48,6 +48,8 @@
                     <div class="assigned-container">
                         <label class="color1" for="assignedTo">ASSIGNED TO</label>
                         <img class="assigned-to-img" src="../../assets/img/Soquat.png" alt="">
+
+
                     </div>
                     <div class="button-container">
                         <button class="cancel-btn" type="cancel">Cancel</button>
