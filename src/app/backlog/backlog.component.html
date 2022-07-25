@@ -4,17 +4,17 @@
     <div class="headlines deepblue">
         <div>
             <h3 class="stand-alone">ASSIGNED TO</h3>
-            <div>content assigned to</div>
+            <div *ngFor="let task of taskservice.allTasks">{{task.assignedTo}}</div>
         </div>
 
         <div class="space-category-details">
             <div>
                 <h3 id="category">CATEGORY</h3>
-                <div>content category</div>
+                <div *ngFor="let task of taskservice.allTasks">{{task.category}}</div>
             </div>
             <div>
                 <h3>DETAILS</h3>
-                <div>content details</div>
+                <div *ngFor="let task of taskservice.allTasks">{{task.description}}</div>
             </div>
 
         </div>

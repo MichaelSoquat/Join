@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TaskServiceService } from '../services/task-service.service';
 
 @Component({
   selector: 'app-backlog',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BacklogComponent implements OnInit {
 
-  constructor() { }
+  constructor(public taskservice:TaskServiceService) { }
 
   ngOnInit(): void {
+    this.taskservice.getAllTasksFromServer();
   }
+
+ 
 
 }

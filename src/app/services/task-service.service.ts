@@ -37,4 +37,24 @@ export class TaskServiceService {
       console.log(e)
     }
   }
+
+  getAllTasksFromServer() {
+    try {
+      let response = this.http.get('http://127.0.0.1:8000/tasks/')
+      console.log(response)
+      response.subscribe((tasks) => {
+        console.log('sub task', tasks)
+        this.saveTasksInAllTasks(tasks);
+      })
+
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }
+
+  saveTasksInAllTasks(tasks: any) {
+    this.allTasks = tasks;
+    console.log(this.allTasks)
+  }
 }
