@@ -15,9 +15,9 @@ export class AddTaskComponent implements OnInit {
   constructor(public taskservice: TaskServiceService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getAllTasksTest();
-    this.saveTask();
-    this.changeTask();
+    // this.getAllTasksTest();
+    // this.saveTask();
+    // this.changeTask();
   }
 
   getAllTasksTest() {
@@ -28,6 +28,7 @@ export class AddTaskComponent implements OnInit {
       response.subscribe((data) => {
         console.log(data)
       })
+
     }
 
     catch (e) {
