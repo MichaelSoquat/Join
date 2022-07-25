@@ -17,9 +17,10 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {
     this.getAllTasksTest();
     this.saveTask();
+    this.changeTask();
   }
 
-  async getAllTasksTest() {
+  getAllTasksTest() {
     try {
       let response = this.http.get('http://127.0.0.1:8000/tasks/')
       console.log(response)
@@ -36,7 +37,7 @@ export class AddTaskComponent implements OnInit {
 
   }
 
-  async saveTask() {
+  saveTask() {
 
     //Post request funktioniert mit normalem JS jedoch Fehler mit httpClient; 
     //Nun klappt es. FD muss hier ohne body rein! s. unten
@@ -80,9 +81,41 @@ export class AddTaskComponent implements OnInit {
     }
 
 
+
+
   }
 
+  changeTask() {
+    try {
+      let fd = new FormData();
+      fd.append("category", "Test of Angular")
+      fd.append("description", "Angular Test important")
+      fd.append("dueDate", "2022-07-23")
+      fd.append("title", "Test Todo")
+      fd.append("urgency", "high")
+      fd.append("status", "todo")
+      let request = this.http.put("http://127.0.0.1:8000/tasks/1/", fd)
 
+      request.subscribe((data) => {
+        console.log(data)
+      })
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }
+
+  deleteTask() {
+    try {
+      let request = this.http.delete("http://127.0.0.1:8000/tasks/1/");
+      request.subscribe((data) => {
+        console.log(data)
+      })
+    }
+    catch (e) {
+      console.log(e)
+    }
+  }
 
 
 
