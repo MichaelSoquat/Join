@@ -2,7 +2,7 @@
     <div class="column">
         <h1>TO DO</h1>
         <div class="render-content bg2">
-            <div class="one-task-container" *ngFor="let task of taskservice.allTasks">
+            <div class="one-task-container" *ngFor="let task of taskservice.allTasks | testFilter: 'backlog'">
                 <h3>{{task.title}}</h3>
                 <div>{{task.description}}</div>
 

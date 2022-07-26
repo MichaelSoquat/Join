@@ -10,12 +10,19 @@
         <div class="space-category-details">
             <div>
                 <h3 id="category">CATEGORY</h3>
-                <div *ngFor="let task of taskservice.allTasks">{{task.category}}</div>
+                <div *ngFor="let task of (taskservice.allTasks)">{{task.category}}</div>
             </div>
             <div>
                 <h3>DETAILS</h3>
-                <div *ngFor="let task of taskservice.allTasks">{{task.description}}</div>
+                <div *ngFor="let task of (taskservice.allTasks)">{{task.description}}
+                    <button (click)="taskservice.moveToBoard(task.id)">Move</button>
+                </div>
+
             </div>
+
+
+
+
 
         </div>
     </div>

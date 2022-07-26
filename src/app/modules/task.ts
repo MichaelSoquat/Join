@@ -10,9 +10,11 @@ export class Task {
 
     urgency: string = ``;
 
-    status:string = 'backlog';
+    status: string = 'backlog';
 
-    assignedTo:string = '';
+    id: number = -1;
+
+    assignedTo: string = '';
 
     constructor(data: Task) {
         this.category = data.category;

@@ -7,6 +7,7 @@ import { Task } from '../modules/task';
   providedIn: 'root'
 })
 export class TaskServiceService {
+
   allTasks: Task[] = [];
   constructor(public http: HttpClient) { }
 
@@ -56,5 +57,34 @@ export class TaskServiceService {
   saveTasksInAllTasks(tasks: any) {
     this.allTasks = tasks;
     console.log(this.allTasks)
+  }
+
+  moveToBoard(id: number) {
+    console.log(this.allTasks)
+    let filteredTask = this.allTasks.filter((task) => {
+      return task.id == id;
+    })
+    console.log(filteredTask)
+    this.saveInDataBase(filteredTask, id);
+  }
+
+  saveInDataBase(task: Object, id: number) {
+    try {
+      let fd = new FormData();
+      fd.append("category", "Test of Angular")
+      fd.append("description", "Angular Test important")
+      fd.append("dueDate", "2022-07-23")
+      fd.append("title", "Test Todo")
+      fd.append("urgency", "high")
+      fd.append("status", "todo")
+      let request = this.http.put("http://127.0.0.1:8000/tasks/1/", fd)
+
+      request.subscribe((data) => {
+        console.log(data)
+      })
+    }
+    catch (e) {
+      console.log(e)
+    }
   }
 }

@@ -10,6 +10,7 @@ import { BoardComponent } from './board/board.component';
 import { BacklogComponent } from './backlog/backlog.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HelpComponent,
     AddTaskComponent,
     BacklogComponent,
-    BoardComponent
+    BoardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
